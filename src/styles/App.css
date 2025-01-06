@@ -509,6 +509,7 @@
 }
 
 .slider {
+  appearance: none;
   -webkit-appearance: none;
   width: 100px;
   height: 4px;
@@ -519,6 +520,7 @@
 }
 
 .slider::-webkit-slider-thumb {
+  appearance: none;
   -webkit-appearance: none;
   width: 12px;
   height: 12px;

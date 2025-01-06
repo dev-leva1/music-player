@@ -25,10 +25,8 @@ interface Track {
   genre: string;
 }
 
-// Добавим тип для вкладок
 type TabType = 'search' | 'wave' | 'collection';
 
-// Добавим интерфейс для истории поиска
 interface SearchHistory {
   query: string;
   timestamp: number;
@@ -147,7 +145,6 @@ const App: React.FC = () => {
     }
   ];
 
-  // Загружаем историю поиска при монтировании
   useEffect(() => {
     const savedHistory = localStorage.getItem('searchHistory');
     if (savedHistory) {
@@ -155,20 +152,18 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // Сохраняем историю поиска
   const saveSearch = (query: string) => {
     if (!query.trim()) return;
 
     const newHistory = [
       { query: query.trim(), timestamp: Date.now() },
       ...searchHistory.filter(item => item.query !== query.trim())
-    ].slice(0, 5); // Храним только последние 5 запросов
+    ].slice(0, 5);
 
     setSearchHistory(newHistory);
     localStorage.setItem('searchHistory', JSON.stringify(newHistory));
   };
 
-  // Функция поиска
   const handleSearch = (query: string) => {
     setSearchQuery(query);
     
@@ -184,13 +179,11 @@ const App: React.FC = () => {
     }
   };
 
-  // Очистка истории поиска
   const clearSearchHistory = () => {
     setSearchHistory([]);
     localStorage.removeItem('searchHistory');
   };
 
-  // Удаление отдельного элемента из истории
   const removeFromHistory = (query: string) => {
     const newHistory = searchHistory.filter(item => item.query !== query);
     setSearchHistory(newHistory);
@@ -202,7 +195,6 @@ const App: React.FC = () => {
     setIsModalOpen(true);
   };
 
-  // Функция для рендера контента вкладки
   const renderTabContent = () => {
     switch (activeTab) {
       case 'search':
@@ -337,7 +329,6 @@ const App: React.FC = () => {
                   <p>208 треков</p>
                 </div>
               </div>
-              {/* Можно добавить другие плейлисты */}
             </div>
           </div>
         );
