@@ -1,0 +1,44 @@
+.track-list {
+  margin-top: 1rem;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.track-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.track-cover {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.track-details h4 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.track-details p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.track-duration {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+} 

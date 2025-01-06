@@ -1,0 +1,30 @@
+.navigation {
+  background-color: #000000;
+  padding: 1rem;
+  width: 240px;
+  height: 100%;
+}
+
+.nav-logo {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+.nav-items {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-items li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-items li:hover {
+  color: #1db954;
+} 
